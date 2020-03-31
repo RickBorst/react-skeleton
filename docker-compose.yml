@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  react-skeleton:
+    image: mhart/alpine-node:12
+    working_dir: /app
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+    ports:
+      - '3000:3000'
+    command: sh -c "yarn install && yarn dev"

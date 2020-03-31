@@ -1,0 +1,43 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "import",
+    "prettier"
+  ],
+  "rules": {
+    "react/button-has-type": [2],
+    "react/no-multi-comp": [2],
+    "react/react-in-jsx-scope": "error",
+    "react/jsx-key": [2],
+    "react/jsx-no-duplicate-props": [2],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "prettier/prettier": "error"
+  }
+}
