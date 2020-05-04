@@ -18,5 +18,5 @@ jobs:
           command: cat ~/.github-packages-read-write-token | docker login docker.pkg.github.com -u RickBorst --password-stdin
 
       - run:
-        name: Push image to GitHub
-        command: docker push docker.pkg.github.com/rickborst/react-skeleton/react-skeleton:$CIRCLE_SHA1
+          name: Push image to GitHub
+          command: docker push docker.pkg.github.com/rickborst/react-skeleton/react-skeleton:$CIRCLE_SHA1
