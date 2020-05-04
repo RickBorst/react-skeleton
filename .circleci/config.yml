@@ -7,7 +7,7 @@ jobs:
 
       - run:
           name: Build image
-          command: docker build -t react-skeleton:$CIRCLE_SHA1 .
+          command: docker build -t docker.pkg.github.com/rickborst/react-skeleton/react-skeleton:$CIRCLE_SHA1 .
 
       - run:
           name: Add GitHub packages read/write token
@@ -15,10 +15,8 @@ jobs:
 
       - run:
           name: Log into GitHub
-          command: |
-            cat ~/.github-packages-read-write-token |
-            docker login docker.pkg.github.com -u RickBorst --password-stdin
+          command: cat ~/.github-packages-read-write-token | docker login docker.pkg.github.com -u RickBorst --password-stdin
 
       - run:
-        name: Push image to GitHub
-        command: docker push docker.pkg.github.com/rickborst/react-skeleton/react-skeleton:$CIRCLE_SHA1
+          name: Push image to GitHub
+          command: docker push docker.pkg.github.com/rickborst/react-skeleton/react-skeleton:$CIRCLE_SHA1
