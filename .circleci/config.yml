@@ -15,9 +15,7 @@ jobs:
 
       - run:
           name: Log into GitHub
-          command: |
-            cat ~/.github-packages-read-write-token |
-            docker login docker.pkg.github.com -u RickBorst --password-stdin
+          command: cat ~/.github-packages-read-write-token | docker login docker.pkg.github.com -u RickBorst --password-stdin
 
       - run:
         name: Push image to GitHub
